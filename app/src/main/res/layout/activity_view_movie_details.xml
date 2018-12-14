@@ -44,7 +44,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Desc"
+            android:id="@+id/descript"
             android:layout_weight="0.025"
             android:textSize="24sp"/>
 
@@ -65,13 +65,13 @@
             android:layout_height="wrap_content"
             android:text="No Review yet."
             android:layout_weight="0.025"
-            android:textSize="14sp"
+            android:textSize="24sp"
             android:id="@+id/NoReviewText"
             />
 
     <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/YesReviewText" android:textSize="14sp"
+            android:layout_height="wrap_content" android:id="@+id/YesReviewText" android:textSize="24sp"
             android:text="Long hold to add a review\n"/>
 
 
@@ -102,7 +102,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ReleasingDate"
+            android:id="@+id/releasedate"
             android:layout_weight="0.025"
             android:textSize="24sp"/>
 

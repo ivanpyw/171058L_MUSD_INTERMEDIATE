@@ -89,10 +89,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    override fun onBackPressed() {
-        val intent = Intent(this, ListMovie::class.java)
-        startActivity(intent)
-        super.onBackPressed()
-    }
 }

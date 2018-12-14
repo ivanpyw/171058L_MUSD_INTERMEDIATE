@@ -32,19 +32,16 @@ class RatingSystem : AppCompatActivity() {
             val ptMovieRate = findViewById<EditText>(R.id.ratingreview)
             val movieRate: String? = ptMovieRate.text.toString()
             if(movieRate.isNullOrEmpty()){
-                ptMovieRate.setError("Please input rating")
+                ptMovieRate.setError("Please enter a rating")
             }
-        }else {
-            var MovieInfo = applicationContext as MovieGetSet
-            MovieInfo.setMovieStar(RatingBar.rating)
-            MovieInfo.setMovieRatings(ratingreview.text.toString())
-            val intent = Intent(this, ViewMovieDetails::class.java)
-            startActivity(intent)
+            else {
+                MovieInfo.setMovieStar(RatingBar.rating)
+                MovieInfo.setMovieRatings(ratingreview.text.toString())
+                val intent = Intent(this, ViewMovieDetails::class.java)
+                startActivity(intent)
+            }
         }
-        if(item?.itemId == R.id.CancelButton){
-            var myIntent = Intent(this, ViewMovieDetails::class.java)
-            startActivity(myIntent)
-        }
+
         return super.onOptionsItemSelected(item)
     }
 

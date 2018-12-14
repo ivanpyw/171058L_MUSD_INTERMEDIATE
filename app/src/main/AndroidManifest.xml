@@ -3,11 +3,13 @@
           package="com.example.ivanp.a171058l_musd_assignment">
 
     <application
+            android:name=".MovieGetSet"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="Movierater"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
+            android:exported="true"
             android:theme="@style/AppTheme">
 
         <activity android:name=".ListMovie">
@@ -17,27 +19,27 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-         <activity android:name=".MainActivity">
+         <activity android:name=".MainActivity" android:parentActivityName="com.example.ivanp.a171058l_musd_assignment.ListMovie">
          <intent-filter>
          <action android:name="android.intent.action.MAIN"/>
          <category android:name="android.intent.category.LAUNCHER"/>
          </intent-filter>
          </activity>
-        <activity android:name=".ViewMovieDetails">
+        <activity android:name=".ViewMovieDetails" android:parentActivityName="com.example.ivanp.a171058l_musd_assignment.ListMovie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RatingSystem">
+        <activity android:name=".RatingSystem" android:parentActivityName="com.example.ivanp.a171058l_musd_assignment.ViewMovieDetails">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".EditMovie">
+        <activity android:name=".EditMovie" android:parentActivityName="com.example.ivanp.a171058l_musd_assignment.ListMovie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

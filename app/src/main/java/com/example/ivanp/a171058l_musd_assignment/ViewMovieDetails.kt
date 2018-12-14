@@ -4,10 +4,12 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_view_movie_details.*
 
 class ViewMovieDetails : AppCompatActivity() {
@@ -18,9 +20,9 @@ class ViewMovieDetails : AppCompatActivity() {
 
         var MovieInfo = applicationContext as MovieGetSet
         titleinfo.text = MovieInfo.getMovieName()
-        Desc.text = MovieInfo.getMovieDesc()
+        descript.text = MovieInfo.getMovieDesc()
         lang.text = MovieInfo.getMovieLang()
-        ReleasingDate.text = MovieInfo.getMovieDate()
+        releasedate.text = MovieInfo.getMovieDate()
 
         if(!MovieInfo.getMovieRatings().isNullOrBlank()){
             YesReviewText.text = MovieInfo.getMovieRatings()
@@ -57,6 +59,7 @@ class ViewMovieDetails : AppCompatActivity() {
         super.onCreateContextMenu(menu, v, menuInfo)
         if (v?.id == R.id.NoReviewText || v?.id == R.id.YesReviewText){
             menu?.add(1, 1001, 1, "Add Review")
+
         }
 
     }
@@ -65,14 +68,26 @@ class ViewMovieDetails : AppCompatActivity() {
         if (item?.itemId == 1001) {
             var myIntent = Intent(this, RatingSystem::class.java)
             startActivity(myIntent)
+        }else if(item?.itemId == 1002) {
+            var myIntent = Intent(this, EditMovie::class.java)
+            startActivity(myIntent)
         }
         return super.onContextItemSelected(item)
 
     }
 
-    override fun onBackPressed() {
-        val intent = Intent(this, ListMovie::class.java)
-        startActivity(intent)
-        super.onBackPressed()
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.movieviewmovie, menu)
+        return super.onCreateOptionsMenu(menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if(item?.itemId == R.id.EditMovie){
+            var myIntent = Intent(this, EditMovie::class.java)
+            startActivity(myIntent)
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 }

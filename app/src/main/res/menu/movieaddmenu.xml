@@ -13,7 +13,7 @@
         android:title="Clear Entries"
         app:showAsAction="never"
         android:id="@+id/ClearAddEntry">
-
     </item>
+
 
 </menu>

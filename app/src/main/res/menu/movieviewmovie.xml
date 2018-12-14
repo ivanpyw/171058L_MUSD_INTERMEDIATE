@@ -3,18 +3,11 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/SaveBtn"
-        android:title="Save"
+        android:title="Edit Detail"
+        android:id="@+id/EditMovie"
         app:showAsAction="always">
 
     </item>
-
-    <item
-        android:title="Cancel"
-        android:id="@+id/CancelButton"
-        app:showAsAction="always">
-    </item>
-
 
 
 </menu>
